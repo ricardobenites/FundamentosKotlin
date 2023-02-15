@@ -1,5 +1,7 @@
 package com.example.fundamentoskotlin
 
+import kotlin.math.abs
+
 fun main(){
     sayHello()
 
@@ -10,6 +12,12 @@ fun main(){
     val b = 3
     println("$a + $b = ${sum(a,b)}")
     println("$a - $b = ${sub(a,b)}")
+
+    newTopic("Infix")
+    val c = -3
+    println(c.enableAbs(false))
+    println("$a + $c = ${sum(a, c)}")
+    println("$a + $c = ${sum(a, c.enableAbs(true))}")
 }
 
 private fun sayHello(): Unit{ //Unit = void
@@ -22,4 +30,4 @@ fun sum(a: Int, b: Int): Int{
 //optimazado para retornos mas simples
 fun sub(a: Int, b: Int) = a - b
 
-
+infix fun Int.enableAbs(enable: Boolean) = if (enable) abs(this) else this
