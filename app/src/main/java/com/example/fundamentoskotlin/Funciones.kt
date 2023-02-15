@@ -18,9 +18,15 @@ fun main(){
     println(c.enableAbs(false))
     println("$a + $c = ${sum(a, c)}")
     println("$a + $c = ${sum(a, c.enableAbs(true))}")
+
+    newTopic("Sobrecarga")
+    showProduct("Soda" , "10%")
+    showProduct("Pan")
+    showProduct("Caramelo", "15%")
+    showProduct("Jugo", validity = "15 de marzo" )
 }
 
-private fun sayHello(): Unit{ //Unit = void
+private fun sayHello() { //Unit = void
     println("Hola Kotlin")
 }
 
@@ -31,3 +37,7 @@ fun sum(a: Int, b: Int): Int{
 fun sub(a: Int, b: Int) = a - b
 
 infix fun Int.enableAbs(enable: Boolean) = if (enable) abs(this) else this
+
+fun showProduct(name: String, promo: String ="Sin promocion", validity: String = "agotar existencias"){
+    println("$name = $promo hasta $validity")
+}
