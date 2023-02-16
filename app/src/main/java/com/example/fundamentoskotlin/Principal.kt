@@ -1,5 +1,7 @@
 package com.example.fundamentoskotlin
 
+//constante global, mejor practica
+const val separator = "=================="
 fun main(){
     //print("Hola Kotlin")
     newTopic("Hola Kotlin")
@@ -27,5 +29,5 @@ fun newTopic(topic: String){
     print(topic)
     print("==================")*/
 
-    print("\n================== $topic ==================\n")
+    print("\n $separator $topic $separator \n")
 }
